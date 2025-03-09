@@ -9,7 +9,7 @@ st.set_page_config(
 # Título do aplicativo
 st.title("Volume do Silo")
 
-altura = st.number_input("", min_value=0.0, step=0.1, max_value=3.247, value=None, placeholder='Digite o valor de H')  # Campo de entrada do raio
+altura = st.number_input("", min_value=0.0, step=0.1, max_value=3.247, value=None, placeholder='Digite o valor de H em m')  # Campo de entrada do raio
 
 st.image('triangulo45.jpg')
 
