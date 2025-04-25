@@ -17,7 +17,7 @@ D = st.number_input("Digite o valor de D em mm", min_value=0.0, step=1.0,  value
 
 d = st.number_input("Digite o valor de d em mm", min_value=0.0, step=1.0,  value=200.0) 
 
-
+density = st.number_input("Digite o valor da densidade em kg/m³", min_value=0.0, step=1.0,  value=1.0) 
 # Função para calcular o volume da esfera
 def calcular_volume(h):
     # c = d + (H - h) * (D - d) / H
@@ -28,7 +28,9 @@ if st.button("Calcular Volume"):
     if h != None:
         if h >= 0:
             volume = calcular_volume(h) * 1e-9
+            mass = volume * density
             st.success(f"O volume do silo é: {volume:.2f} m³")
+            st.success(f"A massa total é: {mass:.2f} kg")
     else:
         st.warning("Por favor, insira um valor válido para a altura.")
 
