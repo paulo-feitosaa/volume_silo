@@ -13,15 +13,15 @@ h = st.number_input("Digite a leitura do sensor em mm", min_value=0.0, step=1.0,
 
 D = st.number_input("Digite o valor de D em mm", min_value=0.0, step=1.0,  value=3750.0)  # Campo de entrada do raio
 
-H = st.number_input("Digite o valor de H em mm", min_value=0.0, step=1.0,  value=3000.0) 
+# H = st.number_input("Digite o valor de H em mm", min_value=0.0, step=1.0,  value=3000.0) 
 
 d = st.number_input("Digite o valor de d em mm", min_value=0.0, step=1.0,  value=200.0) 
 
 
 # Função para calcular o volume da esfera
 def calcular_volume(h):
-    c = d + (H - h) * (D - d) / H
-    return (math.pi / 12) * (H - h) * (c*c + d*d + c*d)
+    # c = d + (H - h) * (D - d) / H
+    return (h * math.pi / 36) * (9*d*d + 6 * d * h * math.sqrt(3) + 4 * h * h)
 
 # Botão para cálculo e exibição do resultado
 if st.button("Calcular Volume"):
