@@ -21,8 +21,11 @@ density = st.number_input("Digite o valor da densidade em t/m³", min_value=0.0,
 # Função para calcular o volume da esfera
 def calcular_volume(h):
     # c = d + (H - h) * (D - d) / H
-    return (h * math.pi / 36) * (9*d*d + 6 * d * h * math.sqrt(3) + 4 * h * h)
-
+    if h <= 3750:
+        vol = (h * math.pi / 36) * (9*d*d + 6 * d * h * math.sqrt(3) + 4 * h * h)
+    else:
+        vol = 21076234535.0916808554 + math.pi * D * D * (h - 3750) / 4
+    return vol
 # Botão para cálculo e exibição do resultado
 if st.button("Calcular Volume"):
     if h != None:
